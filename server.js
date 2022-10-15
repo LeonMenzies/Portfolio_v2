@@ -9,12 +9,11 @@ app.use(express.json());
 app.use("/", router);
 app.listen(3001, () => console.log("Server Running"));
 
-
 const contactEmail = nodemailer.createTransport({
-  service: 'gmail',
+  service: "gmail",
   auth: {
-    user: "deepfriedpear@gmail.com",
-    pass: "Leonm3nzies",
+    user: process.env.EMAIL,
+    pass: process.env.EMAIL_PASSWORD,
   },
 });
 
